@@ -1,7 +1,7 @@
 import styles from "../../styles/Header/Header.module.scss"
 import { useState } from "react"
 
-const Header = () => {
+const Header = ({openAddItem}) => {
 
   const [activeTab, setActiveTab] = useState(1)
   const updateActiveTab = (number) => setActiveTab(number)
@@ -43,7 +43,7 @@ const Header = () => {
         </ul>
         <div className={styles.addBtnContainer}>
           <div className={styles.buttonDecor}/>
-          <button onClick={() => console.log("okkeka")} className={styles.addBtn}>+</button>
+          <button onClick={openAddItem} className={styles.addBtn}>+</button>
         </div>
        
       </nav>

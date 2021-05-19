@@ -1,0 +1,9 @@
+.addItem {
+  background-color: red;
+  position: fixed;
+  left: 50%;
+  bottom: 5rem;
+  transform: translate(-50%, 0);
+  transition: 400ms;
+  overflow: hidden;
+}

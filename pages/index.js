@@ -4,8 +4,15 @@ import styles from '../styles/Home.module.scss'
 import Total from '../comps/Total/Total'
 import ItemList from '../comps/ItemList/ItemList'
 import Header from '../comps/Header/Header'
+import AddItem from '../comps/AddItem/AddItem'
+import { useState } from 'react'
 
 export default function Home() {
+
+  const [addItemOpen, setAddItemOpen] = useState(false)
+  const openAddItem = () => setAddItemOpen(true)
+  const closeAddItem = () => setAddItemOpen(false)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,13 +30,14 @@ export default function Home() {
       <meta name="theme-color" content="#317EFB"/>
       </Head>
 
-      <Header />
+      <Header openAddItem={openAddItem}/>
       <Total />
 
       <main>
         <ItemList />
       </main>
 
+      <AddItem closeAddItem={closeAddItem} addItemOpen={addItemOpen}/>
     </div>
   )
 }
