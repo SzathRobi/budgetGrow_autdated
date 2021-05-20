@@ -42,13 +42,6 @@ export default function Home({transactions}) {
         amount: Number(itemAmount),
         income: toggleChecked
       }
-      try{
-        const res = await axios.post("http://localhost:3000/api/item/create", newItem)
-        res.data.json()
-      }
-      catch(err) {
-        console.log(err)
-      }
     }
     setAddItemOpen(!addItemOpen)
   }
@@ -90,11 +83,11 @@ export default function Home({transactions}) {
   )
 }
 
-export async function getServerSideProps(context) {
+/*export async function getServerSideProps(context) {
   // Fetch transactions from external API
-    const res = await fetch("http://localhost:3000/api/item/read")
+    const res = await fetch("https://budgetgrow.vercel.app/api/item/read")
     const transactions = await res.json()
 
   // Pass transactions to the page via props
   return { props: { transactions } }
-}
+}*/

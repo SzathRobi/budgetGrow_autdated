@@ -8,8 +8,8 @@ const ItemList = ({transactions}) => {
     <section className={styles.itemList}>
       <FilterBtns />
       <section>
-      {transactions.map(transaction => <ListItem key={transaction._id} transaction={transaction}/>)}
-       
+      {/*transactions.map(transaction => <ListItem key={transaction._id} transaction={transaction}/>)*/}
+       <ListItem />
       </section>
     </section>    
   )
