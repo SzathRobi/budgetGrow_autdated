@@ -16,7 +16,7 @@ const transaction = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now().toLocaleString()
+    default: Date.now()
   }
 });
 

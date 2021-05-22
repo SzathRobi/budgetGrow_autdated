@@ -36,14 +36,15 @@ export default function Home({transactions}) {
   
   const [addItemOpen, setAddItemOpen] = useState(false)
   const updateAddItemOpen = async () => {
+    setAddItemOpen(!addItemOpen)
     if(addItemOpen) {
       const newItem = {
         title: itemTitle,
         amount: Number(itemAmount),
         income: toggleChecked
       }
+    await axios.post("http://localhost:3000/api/item/create", newItem)
     }
-    setAddItemOpen(!addItemOpen)
   }
 
   return (
