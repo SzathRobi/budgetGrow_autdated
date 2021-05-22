@@ -33,7 +33,6 @@ export default function Home({transactions}) {
     }
   }
 
-  
   const [addItemOpen, setAddItemOpen] = useState(false)
   const updateAddItemOpen = async () => {
     setAddItemOpen(!addItemOpen)
@@ -84,11 +83,12 @@ export default function Home({transactions}) {
   )
 }
 
-/*export async function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   // Fetch transactions from external API
-    const res = await fetch("https://budgetgrow.vercel.app/api/item/read")
-    const transactions = await res.json()
-
+  // const res = await fetch("https://budgetgrow.vercel.app/api/item/read")
+  const res = await axios.get("http://localhost:3000/api/item/read")
+  //const transactions = await res.json()
+  const transactions = res.data
   // Pass transactions to the page via props
   return { props: { transactions } }
-}*/
+}
